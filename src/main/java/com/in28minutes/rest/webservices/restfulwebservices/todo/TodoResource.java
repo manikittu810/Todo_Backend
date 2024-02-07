@@ -34,7 +34,7 @@ public class TodoResource {
             return todo;
     }
     @PostMapping("/users/{username}/todos")
-    public Todo addTodo(@PathVariable String username,@RequestBody Todo todo){
+    public Todo createTodo(@PathVariable String username,@RequestBody Todo todo){
         Todo createdTodo=todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(),todo.isDone());
         return createdTodo;
     }
